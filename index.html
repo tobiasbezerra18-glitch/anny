@@ -689,7 +689,7 @@ footer{
     <script>
     function showView(v){
       ['hub','passos','crm','estrategia'].forEach(function(id){
-        document.getElementById('view-'+id).style.display = (id===v)?(id==='estrategia'?'flex':'block'):'none';
+        document.getElementById('view-'+id).style.display = (id===v)?'block':'none'; if(id===v && id==='estrategia'){document.getElementById('view-estrategia').style.display='flex';}
         var btn = document.getElementById('btn-'+id);
         btn.style.background = (id===v)?'#4a5240':'transparent';
         btn.style.color = (id===v)?'#e8d5a3':'rgba(255,255,255,.4)';
@@ -718,7 +718,7 @@ footer{
       </div>
 
       <!-- Notion layout -->
-      <div class="notion-layout" style="display:flex;min-height:440px">
+      <div class="notion-layout" style="display:flex;min-height:0">
 
         <!-- Sidebar -->
         <div class="notion-sidebar" style="width:210px;background:#191919;border-right:1px solid rgba(255,255,255,.06);padding:16px 0;flex-shrink:0">
@@ -916,7 +916,7 @@ footer{
       </div>
 
         <!-- VIEW 4: Estratégia de Comunicação -->
-        <div id="view-estrategia" style="flex:1;display:none;flex-direction:column;background:#111">
+        <div id="view-estrategia" style="flex:1;display:none;flex-direction:column;background:#111;width:100%">
           <!-- carousel header -->
           <div style="padding:20px 24px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06)">
             <div>
